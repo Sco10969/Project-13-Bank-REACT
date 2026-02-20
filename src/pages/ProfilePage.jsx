@@ -102,39 +102,45 @@ export default function ProfilePage() {
         <>
             <Header />
 
-            <main className="main bg-dark">
-                <div className="header">
+            <main className="main profile-main">
+                <div className="header profile-header">
                     {isEditing ? (
                         <>
                             <h1>Welcome back</h1>
-                            <div className="input-wrapper">
-                                <input
-                                    type="text"
-                                    value={editFirstName}
-                                    onChange={(event) => setEditFirstName(event.target.value)}
-                                />
-                                <input
-                                    type="text"
-                                    value={editLastName}
-                                    onChange={(event) => setEditLastName(event.target.value)}
-                                />
-                            </div>
-                            {errorMessage ? <p>{errorMessage}</p> : null}
-                            <div className="input-wrapper">
-                                <button
-                                    className="edit-button"
-                                    type="button"
-                                    onClick={handleSaveProfile}
-                                >
-                                    Save
-                                </button>
-                                <button
-                                    className="edit-button"
-                                    type="button"
-                                    onClick={handleCancelEdit}
-                                >
-                                    Cancel
-                                </button>
+                            <div className="profile-edit-form">
+                                <div className="profile-edit-inputs">
+                                    <input
+                                        className="profile-edit-input"
+                                        type="text"
+                                        value={editFirstName}
+                                        onChange={(event) => setEditFirstName(event.target.value)}
+                                    />
+                                    <input
+                                        className="profile-edit-input"
+                                        type="text"
+                                        value={editLastName}
+                                        onChange={(event) => setEditLastName(event.target.value)}
+                                    />
+                                </div>
+                                {errorMessage ? (
+                                    <p className="profile-edit-error">{errorMessage}</p>
+                                ) : null}
+                                <div className="profile-edit-actions">
+                                    <button
+                                        className="profile-edit-button"
+                                        type="button"
+                                        onClick={handleSaveProfile}
+                                    >
+                                        Save
+                                    </button>
+                                    <button
+                                        className="profile-edit-button profile-edit-button-secondary"
+                                        type="button"
+                                        onClick={handleCancelEdit}
+                                    >
+                                        Cancel
+                                    </button>
+                                </div>
                             </div>
                         </>
                     ) : (

@@ -8,9 +8,12 @@ html {
 
 body {
     margin: 0;
+}
+
+#root {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 .main {
@@ -45,10 +48,6 @@ body {
 .main-nav a {
     font-weight: bold;
     color: #2c3e50;
-}
-
-.main-nav a.router-link-exact-active {
-    color: #42b983;
 }
 
 .main-nav-item {
@@ -160,9 +159,16 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     margin-top: 1rem;
-    border-color: #00bc77;
+    border: 2px solid #00bc77;
     background-color: #00bc77;
     color: #fff;
+    cursor: pointer;
+}
+
+.sign-in-button:hover,
+.sign-in-button:focus {
+    background-color: #00a368;
+    border-color: #00a368;
 }
 
 .sign-in-content {
@@ -180,10 +186,17 @@ body {
 
 .input-remember {
     display: flex;
+    align-items: center;
 }
 
 .input-remember label {
     margin-left: 0.25rem;
+}
+
+.sign-in-error {
+    color: #d32f2f;
+    font-size: 0.9rem;
+    margin: 0.75rem 0 0;
 }
 
 .input-wrapper {
@@ -200,6 +213,13 @@ body {
 .input-wrapper input {
     padding: 5px;
     font-size: 1.2rem;
+    border: 1px solid #b8bfd0;
+    border-radius: 4px;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: #00bc77;
 }
 
 .footer {
@@ -252,16 +272,105 @@ body {
 }
 
 .edit-button {
-    border-color: #00bc77;
+    border: 2px solid #00bc77;
     background-color: #00bc77;
     color: #fff;
     font-weight: bold;
     padding: 10px;
+    cursor: pointer;
+}
+
+.edit-button:hover,
+.edit-button:focus {
+    background-color: #00a368;
+    border-color: #00a368;
 }
 
 .header {
     color: #fff;
     margin-bottom: 2rem;
+}
+
+.profile-main {
+    background-color: #dfe4ee;
+    padding: 2rem 0;
+}
+
+.profile-header {
+    color: #2c3e50;
+}
+
+.profile-edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.profile-edit-inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.profile-edit-input {
+    width: 150px;
+    box-sizing: border-box;
+    padding: 0.5rem 0.6rem;
+    font-size: 1rem;
+    border: 1px solid #b8bfd0;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.profile-edit-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.profile-edit-button {
+    min-width: 90px;
+    padding: 0.4rem 1rem;
+    border: 1px solid #6458f5;
+    border-radius: 3px;
+    background-color: #6458f5;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.profile-edit-button:hover,
+.profile-edit-button:focus {
+    background-color: #5348d4;
+    border-color: #5348d4;
+}
+
+.profile-edit-button-secondary {
+    background-color: #fff;
+    color: #6458f5;
+}
+
+.profile-edit-button-secondary:hover,
+.profile-edit-button-secondary:focus {
+    background-color: #f0f0f0;
+}
+
+.profile-edit-error {
+    margin: 0;
+    color: #8a1f1f;
+    font-size: 0.95rem;
+}
+
+.profile-main .transaction-button {
+    border: 2px solid #6458f5;
+    background-color: #6458f5;
+}
+
+.profile-main .transaction-button:hover,
+.profile-main .transaction-button:focus {
+    background-color: #5348d4;
+    border-color: #5348d4;
 }
 
 .transaction-button {
@@ -271,9 +380,16 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     margin-top: 1rem;
-    border-color: #00bc77;
+    border: 2px solid #00bc77;
     background-color: #00bc77;
     color: #fff;
+    cursor: pointer;
+}
+
+.transaction-button:hover,
+.transaction-button:focus {
+    background-color: #00a368;
+    border-color: #00a368;
 }
 
 @media (min-width: 720px) {

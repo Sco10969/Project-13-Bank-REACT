@@ -100,7 +100,7 @@ export default function LoginPage() {
                             <label htmlFor="remember-me">Remember me</label>
                         </div>
 
-                        {errorMessage ? <p>{errorMessage}</p> : null}
+                        {errorMessage ? <p className="sign-in-error">{errorMessage}</p> : null}
 
                         <button type="submit" className="sign-in-button" disabled={isSubmitting}>
                             Sign In
